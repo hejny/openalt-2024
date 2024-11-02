@@ -1,0 +1,1 @@
+Write sample of usage gpt4 with all the boilerplate code, imports,... using official openai SDK

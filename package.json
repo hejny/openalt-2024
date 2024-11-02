@@ -1,0 +1,15 @@
+{
+  "name": "promptbook-samples",
+  "version": "0.0.0",
+  "module": "esnext",
+  "scripts": {
+    "start": "npx ts-node src/main.ts"
+  },
+  "dependencies": {
+    "openai": "4.70.2",
+    "ptbk": "0.69.6",
+    "spacetrim": "0.11.60",
+    "ts-node": "10.9.2",
+    "waitasecond": "1.11.109"
+  }
+}
