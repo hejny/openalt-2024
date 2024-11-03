@@ -17,15 +17,13 @@ const pipeline = await collection.getPipelineByUrl(`https://pavolhejny.com/hello
 // ▶ Prepare tools
 const tools = {
     llm: new OpenAiExecutionTools(
-        //            <- TODO: [🧱] Implement in a functional (not new Class) way
         {
-            isVerbose: true,
+            isVerbose: false,
             apiKey: process.env.OPENAI_API_KEY,
         },
     ),
     script: [
         new JavascriptExecutionTools(),
-        //            <- TODO: [🧱] Implement in a functional (not new Class) way
     ],
 };
 
