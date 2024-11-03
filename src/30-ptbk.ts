@@ -2,12 +2,17 @@ import { createPipelineExecutor, assertsExecutionSuccessful } from '@promptbook/
 import { createCollectionFromDirectory } from '@promptbook/node';
 import { JavascriptExecutionTools } from '@promptbook/execute-javascript';
 import { OpenAiExecutionTools } from '@promptbook/openai';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: '.env' });
+
+console.log(process.env);
 
 // ▶ Create whole pipeline collection
 const collection = await createCollectionFromDirectory('./promptbook-collection');
 
 // ▶ Get single Pipeline
-const pipeline = await collection.getPipelineByUrl(`https://promptbook.studio/my-collection/write-article.ptbk.md`);
+const pipeline = await collection.getPipelineByUrl(`https://pavolhejny.com/hello.ptbk.md`);
 
 // ▶ Prepare tools
 const tools = {
@@ -28,7 +33,7 @@ const tools = {
 const pipelineExecutor = createPipelineExecutor({ pipeline, tools });
 
 // ▶ Prepare input parameters
-const inputParameters = { word: 'cat' };
+const inputParameters = { name: 'Pavol' };
 
 // 🚀▶ Execute the Pipeline
 const result = await pipelineExecutor(inputParameters);
